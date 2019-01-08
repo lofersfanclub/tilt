@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:700" rel="stylesheet">
+  <style>
+  body{
+background-color: #8642f4;
+font-family: 'Roboto', sans-serif;
+}
+#tilt-base{
+margin: auto;
+width: 50vw;
+height: 50vw;
+transform-style: preserve-3d;
+transform: perspective(2000px);
+}
+
+#tilt-base:hover #box-over{
+  animation: move 4s ease-in-out 1s infinite;
+}
+
+#display{
+  position: absolute;
+  width: 300px;
+  top: -25px;
+  color: #fff;
+  transform: translateZ(200px);
+}
+#box{
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 22%;
+  height: 22%;
+  transform: translateZ(20px);
+  transform-style: preserve-3d;
+  transform: perspective(2000px);
+  transform: translate(-50% -50%);
+  background-image: -webkit-linear-gradient(left, #4facfe 0%, #00f2fe 100%);
+  background-image: -o-linear-gradient(left, #4facfe 0%, #00f2fe 100%);
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+}
+#box-over{
+  position: absolute;
+  width: 41%;
+  height: 41%;
+  background-image: -webkit-linear-gradient(left, #43e97b 0%, #38f9d7 100%);
+  background-image: -o-linear-gradient(left, #43e97b 0%, #38f9d7 100%);
+  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  transform: translateZ(80px);
+  border-radius: 50% 50%;
+}
+
+@keyframes move {
+  0% {left:0;}
+  50% {left:400px;}
+  100%{left:0px;}
+}
+
+#box-top{
+  position: absolute;
+  bottom: -20px;
+  right: -10px;
+  width: 41%;
+  height: 41%;
+  background-image: -webkit-linear-gradient(left, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+  background-image: -o-linear-gradient(left, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+  background-image: linear-gradient(to right, #b8cbb8 0%, #b8cbb8 0%, #b465da 0%, #cf6cc9 33%, #ee609c 66%, #ee609c 100%);
+  transform: translateZ(200px);
+  border-radius: 20px;
+}
+  </style>
+</head>
+<body>
+
+  <div id="tilt-base" data-tilt data-tilt-reverse="true" data-tilt-reset="false">
+        <div id="box">
+          <h1 id="display" class="type-text"></h1>
+          <div id="box-over">
+          </div>
+          <div id="box-top">
+          </div>
+        </div>
+  </div>
+
+<script src="vanilla-tilt.js"></script>
+<script src="typed.js"></script>
+<script>
+
+var typed = new Typed('.type-text', {
+  strings: ["HELLO ^1000 HELLO.", "THIS IS AWESOME"],
+  typeSpeed: 30,
+  backSpeed: 20,
+  backDelay: 1500,
+  loop: true,
+  cursorChar: '',
+});
+
+
+</script>
+</body>
+</html>
