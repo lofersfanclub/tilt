@@ -13,10 +13,10 @@ font-family: 'Roboto', sans-serif;
 }
 #tilt-base{
 margin: auto;
-width: 50vw;
-height: 50vw;
+width: 48vw;
+height: 48vw;
 transform-style: preserve-3d;
-transform: perspective(2000px);
+transform: perspective(4000px);
 }
 
 #tilt-base:hover #box-over{
@@ -38,7 +38,7 @@ transform: perspective(2000px);
   height: 22%;
   transform: translateZ(20px);
   transform-style: preserve-3d;
-  transform: perspective(2000px);
+  transform: perspective(4000px);
   transform: translate(-50% -50%);
   background-image: -webkit-linear-gradient(left, #4facfe 0%, #00f2fe 100%);
   background-image: -o-linear-gradient(left, #4facfe 0%, #00f2fe 100%);
@@ -88,7 +88,7 @@ transform: perspective(2000px);
   </div>
 
 <script src="vanilla-tilt.js"></script>
-<script src="typed.js"></script>
+<script src="typed.min.js"></script>
 <script>
 
 var typed = new Typed('.type-text', {
